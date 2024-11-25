@@ -1,9 +1,10 @@
 package api.util.constant
 
 object PlayerStats {
-    const val HEALTH = 100
-    const val AGILITY = 5
-    const val STRENGTH = 10
+    const val HEALTH = 200
+    const val AGILITY = 8
+    const val STRENGTH = 15
+    const val VISION_RANGE = 2
 }
 
 object BackpackStats {

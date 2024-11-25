@@ -1,3 +1,7 @@
 package api.entity.behavior
 
-interface Movable
+import api.entity.environment.Position
+
+interface Movable {
+    fun move(pos: Position): Position
+}

@@ -1,33 +1,25 @@
-import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
+import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.application
-import api.di.appModule
-import org.koin.core.context.startKoin
-
-@Composable
-@Preview
-fun App() {
-    var text by remember { mutableStateOf("Hello, World!") }
-
-    MaterialTheme {
-        Button(onClick = {
-            text = "Hello, Desktop!"
-        }) {
-            Text(text)
-        }
-    }
-}
+import androidx.compose.ui.window.rememberWindowState
+import presentation.app.App
 
 fun main() = application {
-    startKoin {
-        modules(appModule)
-    }
+    val windowState = rememberWindowState(
+        width = 1920.dp,
+        height = 1080.dp,
+        placement = WindowPlacement.Fullscreen
+    )
 
-    Window(onCloseRequest = ::exitApplication) {
+    Window(
+        onCloseRequest = ::exitApplication,
+        title = "The best Rogalik in 21 school",
+        state = windowState
+    ) {
         App()
     }
 }
+
+
+

@@ -1,6 +1,5 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
-
 plugins {
     kotlin("jvm")
     id("org.jetbrains.compose")
@@ -22,10 +21,8 @@ dependencies {
     // (in a separate module for demo project and in testMain).
     // With compose.desktop.common you will also lose @Preview functionality
     implementation(compose.desktop.currentOs)
-    implementation("io.insert-koin:koin-core:4.0.0")
-    implementation("io.insert-koin:koin-compose:4.0.0")
-    implementation("io.insert-koin:koin-compose-viewmodel:4.0.0")
-    implementation(kotlin("script-runtime")) // suzymarg
+    implementation(compose.uiTooling)
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.18.1")
 }
 
 compose.desktop {
